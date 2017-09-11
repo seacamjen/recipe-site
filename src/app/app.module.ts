@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
 import { ContactComponent } from './contact/contact.component';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +23,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    RecipeDetailComponent
   ],
   imports: [
     BrowserModule,
