@@ -11,4 +11,12 @@ export class RecipeService {
     return RECIPES;
   }
 
+  getRecipeById(recipeId: number) {
+    for (var i = 0; i <= RECIPES.length -1; i++) {
+      if (RECIPES[i].id === recipeId) {
+        return RECIPES[i];
+      }
+    }
+  }
+
 }
