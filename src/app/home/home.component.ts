@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Recipe } from '../recipe.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,10 +14,10 @@ export class HomeComponent implements OnInit {
   ];
 
   goToDetailPage(clickedRecipe: Recipe) {
-     this.router.navigate(['recipes', clickedRecipe.id]);
+     this.router.navigate(['recipe', clickedRecipe.id]);
    };
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
