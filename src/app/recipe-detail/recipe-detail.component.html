@@ -1,11 +1,11 @@
 <div>
-  <h1>{{recipeToDisplay.name}}</h1>
-  <h2>{{recipeToDisplay.description}}</h2>
-  <h2>{{recipeToDisplay.ingredients}}</h2>
-  <h2>{{recipeToDisplay.directions}}</h2>
-  <h2>{{recipeToDisplay.comments}}</h2>
-  <h2>{{recipeToDisplay.id}}</h2>
-  <h2>{{recipeToDisplay.url}}</h2>
-  <h2>{{recipeToDisplay.categories}}</h2>
-  <h2>{{recipeToDisplay.meal}}</h2>
+  <h1>{{(recipeToDisplay | async).name}}</h1>
+  <h2>{{(recipeToDisplay | async).description}}</h2>
+  <h2>{{(recipeToDisplay | async).ingredients}}</h2>
+  <h2>{{(recipeToDisplay | async).directions}}</h2>
+  <h2>{{(recipeToDisplay | async).comments}}</h2>
+  <h2>{{(recipeToDisplay | async).id}}</h2>
+  <h2>{{(recipeToDisplay | async).url}}</h2>
+  <h2>{{(recipeToDisplay | async).categories}}</h2>
+  <h2>{{(recipeToDisplay | async).meal}}</h2>
 </div>

@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -11,8 +12,8 @@ import { RecipeService } from '../recipe.service';
   providers: [RecipeService]
 })
 export class RecipeDetailComponent implements OnInit {
-  recipeId: number = null;
-  recipeToDisplay: Recipe;
+  recipeId: string;
+  recipeToDisplay;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,9 +23,9 @@ export class RecipeDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.recipeId = parseInt(urlParameters['id']);
+      this.recipeId = urlParameters['id'];
     });
-    // this.recipeToDisplay = this.recipeService.getRecipeById(this.recipeId);
+    this.recipeToDisplay = this.recipeService.getRecipeById(this.recipeId);
   }
 
 }

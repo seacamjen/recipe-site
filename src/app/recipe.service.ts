@@ -18,12 +18,8 @@ export class RecipeService {
     this.recipes.push(newRecipe);
   }
 
-  getRecipeById(recipeId: number) {
-    // for (var i = 0; i <= RECIPES.length -1; i++) {
-    //   if (RECIPES[i].id === recipeId) {
-    //     return RECIPES[i];
-    //   }
-    // }
+  getRecipeById(recipeId: string) {
+    return this.database.object('recipes/' + recipeId);
   }
 
 }

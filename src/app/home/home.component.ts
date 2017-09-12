@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private recipeService: RecipeService) { }
 
-  goToDetailPage(clickedRecipe: Recipe) {
-    //  this.router.navigate(['recipe', clickedRecipe.id]);
+  goToDetailPage(clickedRecipe) {
+     this.router.navigate(['recipes', clickedRecipe.$key]);
    };
 
   ngOnInit() {
