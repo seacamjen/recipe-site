@@ -1,6 +1,6 @@
 <h1>Home Screen</h1>
 
-<div *ngFor="let recipe of recipes" (click)="goToDetailPage(recipe)" class="panel panel-success">
+<div *ngFor="let recipe of recipes | async" (click)="goToDetailPage(recipe)" class="panel panel-success">
   <div class="panel-body">
     <h3><em>{{recipe.name}}</em> Description: {{recipe.description}}</h3>
   </div>
