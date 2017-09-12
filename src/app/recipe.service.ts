@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
-import { RECIPES } from './mock-recipes';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
@@ -15,12 +14,16 @@ export class RecipeService {
     return this.recipes;
   }
 
+  addRecipe(newRecipe: Recipe) {
+    this.recipes.push(newRecipe);
+  }
+
   getRecipeById(recipeId: number) {
-    for (var i = 0; i <= RECIPES.length -1; i++) {
-      if (RECIPES[i].id === recipeId) {
-        return RECIPES[i];
-      }
-    }
+    // for (var i = 0; i <= RECIPES.length -1; i++) {
+    //   if (RECIPES[i].id === recipeId) {
+    //     return RECIPES[i];
+    //   }
+    // }
   }
 
 }

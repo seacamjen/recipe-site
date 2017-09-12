@@ -24,7 +24,7 @@ export class RecipeDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.recipeId = parseInt(urlParameters['id']);
     });
-    this.recipeToDisplay = this.recipeService.getRecipeById(this.recipeId);
+    // this.recipeToDisplay = this.recipeService.getRecipeById(this.recipeId);
   }
 
 }
