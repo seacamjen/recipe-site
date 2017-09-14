@@ -15,7 +15,7 @@ const appRoutes: Routes = [
     component: ContactComponent
   },
   {
-    path: 'recipe/:id',
+    path: 'recipes/:id',
     component: RecipeDetailComponent
   },
   {
