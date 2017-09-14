@@ -12,6 +12,7 @@ import { routing } from './app.routing';
 import { ContactComponent } from './contact/contact.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { AdminComponent } from './admin/admin.component';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     HomeComponent,
     ContactComponent,
     RecipeDetailComponent,
-    AdminComponent
+    AdminComponent,
+    EditRecipeComponent
   ],
   imports: [
     BrowserModule,
