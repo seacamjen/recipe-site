@@ -1,7 +1,7 @@
 <h4>Edit Recipe</h4>
 
-<label>New Recipe Title:</label>
-<input [(ngModel)]="selectedRecipe.title">
+<label>New Recipe Name:</label>
+<input [(ngModel)]="selectedRecipe.name">
 <br>
 
 <label>New Recipe Description:</label>
@@ -33,3 +33,5 @@
 <br>
 
 <button (click)="beginUpdatingRecipe(selectedRecipe)">Update</button>
+<hr>
+<button (click)="beginDeletingRecipe(selectedRecipe)">Delete</button>

@@ -35,4 +35,9 @@ export class RecipeService {
                                 });
   }
 
+  deleteRecipe(localRecipeToDelete) {
+    var recipeEntryInFirebase = this.getRecipeById(localRecipeToDelete.$key);
+    recipeEntryInFirebase.remove();
+  }
+
 }

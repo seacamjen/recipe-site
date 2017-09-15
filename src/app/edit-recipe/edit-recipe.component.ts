@@ -19,4 +19,10 @@ export class EditRecipeComponent implements OnInit {
     this.recipeService.updateRecipe(recipeToUpdate);
   }
 
+  beginDeletingRecipe(recipeToDelete) {
+    if(confirm("Are you sure you want to delete this recipe?")) {
+      this.recipeService.deleteRecipe(recipeToDelete);
+    }
+  }
+
 }
