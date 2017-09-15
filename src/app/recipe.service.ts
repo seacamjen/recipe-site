@@ -22,4 +22,17 @@ export class RecipeService {
     return this.database.object('recipes/' + recipeId);
   }
 
+  updateRecipe(localUpdatedRecipe) {
+    var recipeEntryInFirebase = this.getRecipeById(localUpdatedRecipe.$key);
+    recipeEntryInFirebase.update({name: localUpdatedRecipe.name,
+                                  description: localUpdatedRecipe.description,
+                                  ingredients: localUpdatedRecipe.ingredients,
+                                  directions: localUpdatedRecipe.directions,
+                                  comments: localUpdatedRecipe.comments,
+                                  categories: localUpdatedRecipe.categories,
+                                  url: localUpdatedRecipe.url,
+                                  meal: localUpdatedRecipe.meal
+                                });
+  }
+
 }

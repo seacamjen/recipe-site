@@ -1,12 +1,12 @@
 <h1>Home Screen</h1>
 
-<div *ngFor="let recipe of recipes | async" (click)="goToDetailPage(recipe)" class="panel panel-success">
+<div *ngFor="let recipe of recipes | async" class="panel panel-success">
   <div class="panel-body">
-    <h3><em>{{recipe.name}}</em> Description: {{recipe.description}}</h3>
+    <h3 (click)="goToDetailPage(recipe)"><em>{{recipe.name}}</em> Description: {{recipe.description}}</h3>
     <div *ngIf="currentRoute === '/admin'">
       {{recipe.ingredients}}
       <hr>
-      <app-edit-recipe></app-edit-recipe>
+      <app-edit-recipe [selectedRecipe]="recipe"></app-edit-recipe>
     </div>
   </div>
 </div>
