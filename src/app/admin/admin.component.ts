@@ -15,7 +15,7 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitForm(Name: string, Description: string, Ingredients: string, Directions: string, Comments: string, Categories: string, Url: string, Meal: string) {
+  submitForm(Name: string, Description: string, Ingredients: string, Directions: string, Comments: string, Categories: Array<string>, Url: string, Meal: string) {
     var newRecipe: Recipe = new Recipe(Name, Description, Ingredients, Directions, Comments, Categories, Url, Meal);
     this.recipeService.addRecipe(newRecipe);
   }
