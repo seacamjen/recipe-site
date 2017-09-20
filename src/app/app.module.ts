@@ -29,7 +29,7 @@ export const firebaseConfig = {
     ContactComponent,
     RecipeDetailComponent,
     AdminComponent,
-    EditRecipeComponent
+    EditRecipeComponent,
   ],
   imports: [
     BrowserModule,

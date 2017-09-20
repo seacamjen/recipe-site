@@ -17,9 +17,20 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this._fb.group({
+            name: [''],
+            description: [''],
             ingredients: this._fb.array([
                 this.initIngredient(),
-            ])
+            ]),
+            directions: this._fb.array([
+                this.initDirection(),
+            ]),
+            comments: [''],
+            categories: this._fb.array([
+                this.initCategory(),
+            ]),
+            url: [''],
+            meal: ['']
         });
   }
 
@@ -38,10 +49,46 @@ export class AdminComponent implements OnInit {
   }
 
   removeIngredient(i: number) {
-      // remove Ingredient from the list
-      const control = <FormArray>this.myForm.controls['ingredients'];
-      control.removeAt(i);
-    }
+    // remove Ingredient from the list
+    const control = <FormArray>this.myForm.controls['ingredients'];
+    control.removeAt(i);
+  }
+
+  initDirection(){
+    return this._fb.group({
+            step: ['']
+        });
+  }
+
+  addDirection() {
+    // add Direction to the list
+    const control = <FormArray>this.myForm.controls['directions'];
+    control.push(this.initDirection());
+  }
+
+  removeDirection(i: number) {
+    // remove Direction from the list
+    const control = <FormArray>this.myForm.controls['directions'];
+    control.removeAt(i);
+  }
+
+  initCategory(){
+    return this._fb.group({
+            genre: ['']
+        });
+  }
+
+  addCategory() {
+    // add Category to the list
+    const control = <FormArray>this.myForm.controls['categories'];
+    control.push(this.initCategory());
+  }
+
+  removeCategory(i: number) {
+    // remove Category from the list
+    const control = <FormArray>this.myForm.controls['categories'];
+    control.removeAt(i);
+  }
 
   save(model: Ingredients) {
     console.log(model);

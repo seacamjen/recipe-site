@@ -60,13 +60,30 @@
 
 
 <div class="container">
+  <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" formControlName="name">
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" formControlName="description">
+    </div>
+    </div>
+  </div>
+  <!--ingredients-->
   <div class="row">
     <div class="col-xs-12">
       <div class="margin-20">
         <h4>Add ingredient</h4>
       </div>
-      <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
-        <!--ingredients-->
+
         <div formArrayName="ingredients">
           <div *ngFor="let ingredient of myForm.controls.ingredients.controls; let i=index" class="panel panel-default">
             <div class="panel-heading">
@@ -95,20 +112,105 @@
             Add another ingredient +
           </a>
         </div>
-
-        <div class="margin-20">
-          <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
-        </div>
         <div class="clearfix"></div>
-
         <div class="margin-20">
           <div>myForm details:-</div>
           <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
           <pre>form value: <br>{{myForm.value | json}}</pre>
         </div>
-      </form>
     </div>
   </div>
+  <!--ingredients-->
+  <!--directions-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="margin-20">
+        <h4>Add direction</h4>
+      </div>
+
+        <div formArrayName="directions">
+          <div *ngFor="let direction of myForm.controls.directions.controls; let i=index" class="panel panel-default">
+            <div class="panel-heading">
+              <span>Direction {{i + 1}}</span>
+              <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.directions.controls.length > 1" (click)="removeDirection(i)"></span>
+            </div>
+            <div class="panel-body" [formGroupName]="i">
+              <div class="form-group col-md-2">
+                <label>step</label>
+                <input type="text" class="form-control" formControlName="step">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="margin-20">
+          <a (click)="addDirection()" style="cursor: default">
+            Add another direction +
+          </a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+  </div>
+  <!--directions-->
+  <!--categories-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="margin-20">
+        <h4>Add category</h4>
+      </div>
+
+        <div formArrayName="categories">
+          <div *ngFor="let category of myForm.controls.categories.controls; let i=index" class="panel panel-default">
+            <div class="panel-heading">
+              <span>Category {{i + 1}}</span>
+              <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.categories.controls.length > 1" (click)="removeCategory(i)"></span>
+            </div>
+            <div class="panel-body" [formGroupName]="i">
+              <div class="form-group col-md-2">
+                <label>genre</label>
+                <input type="text" class="form-control" formControlName="genre">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="margin-20">
+          <a (click)="addCategory()" style="cursor: default">
+            Add another category +
+          </a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+  </div>
+  <!--categories-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label>Recipe Comments</label>
+        <input type="text" formControlName="comments">
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label>Recipe Url</label>
+        <input type="text" formControlName="url">
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label>Recipe Meal</label>
+        <input type="text" formControlName="meal">
+      </div>
+    </div>
+  </div>
+  <div class="margin-20">
+    <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
+  </div>
+</form>
 </div>
 
 <br><br><br><br><br><hr>
