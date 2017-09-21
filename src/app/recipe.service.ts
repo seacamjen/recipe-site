@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { Ingredients } from './ingredients';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
@@ -14,7 +15,7 @@ export class RecipeService {
     return this.recipes;
   }
 
-  addRecipe(newRecipe: Recipe) {
+  addRecipe(newRecipe: Ingredients) {
     this.recipes.push(newRecipe);
   }
 

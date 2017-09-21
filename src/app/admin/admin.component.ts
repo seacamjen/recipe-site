@@ -91,12 +91,14 @@ export class AdminComponent implements OnInit {
   }
 
   save(model: Ingredients) {
+    // this.recipeService.addRecipe(model);
     console.log(model);
+    console.log(this.myForm.value);
   }
 
-  submitForm(Name: string, Description: string, Ingredients: string, Directions: string, Comments: string, Categories: Array<string>, Url: string, Meal: string) {
-    var newRecipe: Recipe = new Recipe(Name, Description, Ingredients, Directions, Comments, Categories, Url, Meal);
-    this.recipeService.addRecipe(newRecipe);
-  }
+  // submitForm(Name: string, Description: string, Ingredients: string, Directions: string, Comments: string, Categories: Array<string>, Url: string, Meal: string) {
+  //   var newRecipe: Recipe = new Recipe(Name, Description, Ingredients, Directions, Comments, Categories, Url, Meal);
+  //   this.recipeService.addRecipe(newRecipe);
+  // }
 
 }
